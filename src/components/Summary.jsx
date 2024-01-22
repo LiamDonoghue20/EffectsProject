@@ -2,12 +2,13 @@ import quizCompleteImage from "../assets/quiz-complete.png";
 import QUESTIONS from "../questions.js";
 
 export default function Summary ({ userAnswers }) {
-
+    //find all answers where the response was null (skipped)
     const skippedAnswers = userAnswers.filter(answer => answer === null);
+    //find all answers where the response matches the first answer in the QUESTIONS array 
     const correctAnswers = userAnswers.filter(
         (answer, index) => answer === QUESTIONS[index].answers[0]
     );
-
+    //work out percentages for skipped, correct and wrong
     const skippedAnswersPercent = Math.round(
         (skippedAnswers.length / userAnswers.length) * 100
     );
@@ -35,6 +36,7 @@ export default function Summary ({ userAnswers }) {
                 <span className="text">answered incorrectly</span>
             </p>
         </div>
+        {/* display the answers user selected with styling for skipped, correct and wrong */}
         <ol>
             {userAnswers.map((answer , index)=> {
                 let cssClass = 'user-answer';

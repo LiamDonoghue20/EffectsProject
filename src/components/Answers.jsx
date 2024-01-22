@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 export default function Answers ({answers, selectedAnswer, answerState, onSelect}) {
-
+    //shuffled answers stored as a ref to stop the questions shuffling multiple times every time the answers component is loaded
     const shuffledAnswers = useRef();
 
   //put this code below the quiz completion screen, so it doesnt throw errors trying to generate shuffled answers
