@@ -56,6 +56,7 @@ export default function Question ({questionIndex, onSelectAnswer, onSkipAnswer})
     return (
         <div id="question">
             <QuestionTimer
+                data-testid="timer-component"
                 key={timer}
                 timeout={timer}
                 onTimeout={answer.selectedAnswer  === '' ? onSkipAnswer : null}

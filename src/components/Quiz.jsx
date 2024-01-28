@@ -24,7 +24,7 @@ export default function Quiz() {
   //if quizIsComplete is true, return the summary component
   if (quizIsComplete) {
     return (
-       <Summary userAnswers={userAnswers}/>
+       <Summary data-testid="summary-component" userAnswers={userAnswers}/>
     )
   }
   //key passed through the question so the question component is re-rendered
